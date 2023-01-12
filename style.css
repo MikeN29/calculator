@@ -28,12 +28,14 @@ body {
 
 .clear {
     grid-area: clear;
+    padding-top: 5px;
     background-color: wheat;
 }
 
 .display {
     grid-area: display;
     background-color: black;
+    color: white;
 }
 
 .divide {

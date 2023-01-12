@@ -29,6 +29,8 @@ function operate(num1, num2, operator) {
 
 let displayValue = '';
 
+/*
+
 const nine = document.getElementById('nine');
 const eight = document.getElementById('eight');
 const seven = document.getElementById('seven');
@@ -43,19 +45,20 @@ const zero = document.getElementById('zero');
 nine.addEventListener('click', populateDisplay(9));
 eight.addEventListener('click', populateDisplay(8))
 
-
+*/
 
 function populateDisplay(num) {
-    displayValue.innerHTML += num;
+    displayValue += num;
+    display.innerHTML = displayValue;
+   
     console.log(num);
 
+    console.log(displayValue);
 
+}
 
-
-
-
-    
-
+function clearDisplay() {
+    let displayValue = null;
 
 }
 
