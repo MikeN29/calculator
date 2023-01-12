@@ -4,7 +4,7 @@ body {
 
 .calculator {
     background-color: blueviolet;
-    width: 300px;
+    width: 295px;
     height: 400px;
 
     display: grid;
@@ -12,7 +12,7 @@ body {
     grid-template-columns: 70px 70px 70px 70px;
     grid-template-rows: 80px auto;
     grid-template-areas: 
-    "display display display display"
+    "display display display clear"
     "seven eight nine divide"
     "four five six multiply"
     "one two three subtract"
@@ -20,8 +20,15 @@ body {
     column-gap: 5px;
     row-gap: 5px;
     padding: 10px;
+    text-align: center;
+    font-size: 20px;
 
 
+}
+
+.clear {
+    grid-area: clear;
+    background-color: wheat;
 }
 
 .display {
