@@ -27,7 +27,6 @@ function operate(num1, num2, operator) {
     };
     
 
-let displayValue = '';
 
 /*
 
@@ -47,20 +46,42 @@ eight.addEventListener('click', populateDisplay(8))
 
 */
 
+let displayValue = '';
+
+
+
+
 function populateDisplay(num) {
     displayValue += num;
+    //displayObj.displayValue += num;
+
     display.innerHTML = displayValue;
+
+    //display.innerHTML = displayObj.displayValue;
    
     console.log(num);
 
-    console.log(displayValue);
+    console.log(displayObj.displayValue);
 
 }
 
-function clearDisplay() {
-    let displayValue = null;
+// function clearDisplay() {
+//     let displayObj.displayValue = "",
 
-}
+// }
+
+
+
+// let displayObj = {
+//     displayValue: "",
+// };
+
+//displayObj.myStr = "";
+
+//myFunc(container);
+
+// myFunc could have modified container.myStr and the new value would be here
+//console.log(container.myStr)
 
 
 
