@@ -1,5 +1,3 @@
-//let displayValueOne = '';
-//let displayValueOne = '';
 
 function add(a, b) {
     //1 way to clear display value
@@ -17,10 +15,12 @@ function subtract(a, b) {
 }
 
 function multiply(a, b) {
+    displayValue += '*';
     return parseInt(a) * parseInt(b);
 }
 
 function divide(a, b) {
+    displayValue += '/';
     return parseInt(a) / parseInt(b);
 }
 
@@ -28,42 +28,37 @@ function divide(a, b) {
 
 //need a function that passes in the info/data to operate
 function makeSum() {
-    let plus = '+';
+    let plusSign = '+';
+    let subtractSign = '-';
+    let multiplySign = '*';
+    let divideSign = '/';
     
     
-    //2 let displayValueTwo = displayValue;
-/*
+
     // if else statement to match +, - etc
-    if (displayValue.match(plus)) {
+    if (displayValue.includes(plusSign)) {
         let displayValueOne = displayValue.substring(0, displayValue.indexOf('+'));
         let displayValueTwo = displayValue.substring(displayValue.indexOf('+') + 1); 
-        
-    } else if (displayValue.match())  {
+        operate(displayValueOne, displayValueTwo, plusSign)
+    } else if (displayValue.includes(subtractSign))  {
         let displayValueOne = displayValue.substring(0, displayValue.indexOf('-')); 
         let displayValueTwo = displayValue.substring(displayValue.indexOf('-') + 1); 
-    }*/
+        operate(displayValueOne, displayValueTwo, subtractSign);
+    } else if (displayValue.includes(multiplySign)) {
+        let displayValueOne = displayValue.substring(0, displayValue.indexOf('*')); 
+        let displayValueTwo = displayValue.substring(displayValue.indexOf('*') + 1); 
+        operate(displayValueOne, displayValueTwo, multiplySign);
+    } else if (displayValue.includes(divideSign)) {
+        let displayValueOne = displayValue.substring(0, displayValue.indexOf('/')); 
+        let displayValueTwo = displayValue.substring(displayValue.indexOf('/') + 1); 
+        operate(displayValueOne, displayValueTwo, divideSign);
+    }
+
 
     
-    let displayValueOne = displayValue.substring(0, displayValue.indexOf('+')); //first part of string, before the operator
-    let displayValueTwo = displayValue.substring(displayValue.indexOf('+') + 1); //second part of string, after the operator
-
-    // let displayValueOne = displayValue.substring(0, displayValue.indexOf('-')); //first part of string, before the operator
-    // let displayValueTwo = displayValue.substring(displayValue.indexOf('-') + 1); //second part of string, after the operator
-
-
-
-
-
-
-    console.log('displayValueOne: ' + displayValueOne)
-    console.log('displayValueTwo: ' + displayValueTwo)
-    console.log('displayValue: ' + displayValue);
-
-    
-
-    operate(displayValueOne, displayValueTwo, plus)
-
-
+    //console.log('displayValueOne: ' + displayValueOne)
+    //console.log('displayValueTwo: ' + displayValueTwo)
+    console.log(displayValue); 
 
 }
 
@@ -73,12 +68,14 @@ function operate(num1, num2, operator) {
     if (operator === '+') {
         display.innerHTML = add(num1, num2);
         return add(num1, num2);
-
     } else if (operator === '-') {
+        display.innerHTML = subtract(num1, num2);
         return subtract(num1, num2);
     } else if (operator === '*') {
+        display.innerHTML = multiply(num1, num2);
         return multiply(num1, num2);
     } else if (operator === '/') {
+        display.innerHTML = divide(num1, num2);
         return divide(num1, num2);
     }
     };
@@ -103,6 +100,8 @@ eight.addEventListener('click', populateDisplay(8))
 
 */
 
+
+
 let displayValue = '';
 
 
@@ -116,9 +115,9 @@ function populateDisplay(num) {
 
     //display.innerHTML = displayObj.displayValue;
    
-    console.log(num);
+    //console.log(num);
 
-    console.log(displayValue);
+    //console.log(displayValue);
 
     //push display value to num1
     //on operator (-*+etc) clear display value
@@ -128,6 +127,10 @@ function populateDisplay(num) {
 }
 
  function clearDisplay() {
+    let displayValue = undefined;
+    display.innerHTML = null;
+    displaySum.innerHTML = null;
+
 
  }
 
@@ -142,12 +145,10 @@ can i put click order on the addeventlistener function? */
 
 
 //  let displayObj = {
-//      displayValue: "",
+//      display: "",
 //  };
 
-//displayObj.myStr = "";
 
-//myFunc(container);
 
 
 
