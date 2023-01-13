@@ -27,7 +27,7 @@ function divide(a, b) {
 
 
 //need a function that passes in the info/data to operate
-function makeSum(num1, num2, operator) {
+function makeSum() {
     let plus = '+';
     
     
