@@ -5,13 +5,14 @@ body {
 .calculator {
     background-color: blueviolet;
     width: 295px;
-    height: 400px;
+    height: 500px;
 
     display: grid;
 
     grid-template-columns: 70px 70px 70px 70px;
-    grid-template-rows: 80px auto;
+    grid-template-rows: 80px 80px auto;
     grid-template-areas: 
+    "displaySum displaySum displaySum ."
     "display display display clear"
     "seven eight nine divide"
     "four five six multiply"
@@ -34,6 +35,12 @@ body {
 
 .display {
     grid-area: display;
+    background-color: black;
+    color: white;
+}
+
+.displaySum {
+    grid-area: displaySum;
     background-color: black;
     color: white;
 }

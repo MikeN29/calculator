@@ -10,6 +10,9 @@
 </head>
 <body>
     <div class="calculator">
+        <div class="displaySum">
+            <p id="displaySum"></p>
+        </div>
         <div  class="display">
             <p id="display"></p>
         </div>
@@ -22,19 +25,19 @@
         <div id="multiply" class="multiply">
             <p>X</p>
         </div>
-        <div id="subtract" class="subtract">
+        <div onclick="subtract()" id="subtract" class="subtract">
             <p>-</p>
         </div>
-        <div id="equals" class="equals">
+        <div onclick="makeSum()" id="equals" class="equals">
             <p>=</p>
         </div>
-        <div id="plus" class="plus">
+        <div onclick="add()" id="plus" class="plus">
             <p>+</p>
         </div>
         <div id="point" class="point">
             <p>.</p>
         </div>
-        <div onclick="populateDisplay(9)" id="nine" class="nine">
+        <div onclick="populateDisplay(9);makeSum(9)" id="nine" class="nine">
             <p>9</p>
         </div>
         <div onclick="populateDisplay(8)" id="eight" class="eight">

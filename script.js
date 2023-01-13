@@ -1,22 +1,79 @@
+//let displayValueOne = '';
+//let displayValueOne = '';
+
 function add(a, b) {
-    return a + b;
+    //1 way to clear display value
+    displayValue += '+';/*
+    let displayValueOne = displayValue;
+    let displayValueTwo = displayValue.substring(displayValue.indexOf('+') + 1);
+    console.log('displayValueOne: ' + displayValueOne)
+    console.log('displayValueTwo: ' + displayValueTwo)*/
+    return parseInt(a) + parseInt(b);
 };
 
 function subtract(a, b) {
-    return a - b;
+    displayValue += '-';
+    return parseInt(a) - parseInt(b);
 }
 
 function multiply(a, b) {
-    return a * b;
+    return parseInt(a) * parseInt(b);
 }
 
 function divide(a, b) {
-    return a / b;
+    return parseInt(a) / parseInt(b);
 }
+
+
+
+//need a function that passes in the info/data to operate
+function makeSum(num1, num2, operator) {
+    let plus = '+';
+    
+    
+    //2 let displayValueTwo = displayValue;
+/*
+    // if else statement to match +, - etc
+    if (displayValue.match(plus)) {
+        let displayValueOne = displayValue.substring(0, displayValue.indexOf('+'));
+        let displayValueTwo = displayValue.substring(displayValue.indexOf('+') + 1); 
+        
+    } else if (displayValue.match())  {
+        let displayValueOne = displayValue.substring(0, displayValue.indexOf('-')); 
+        let displayValueTwo = displayValue.substring(displayValue.indexOf('-') + 1); 
+    }*/
+
+    
+    let displayValueOne = displayValue.substring(0, displayValue.indexOf('+')); //first part of string, before the operator
+    let displayValueTwo = displayValue.substring(displayValue.indexOf('+') + 1); //second part of string, after the operator
+
+    // let displayValueOne = displayValue.substring(0, displayValue.indexOf('-')); //first part of string, before the operator
+    // let displayValueTwo = displayValue.substring(displayValue.indexOf('-') + 1); //second part of string, after the operator
+
+
+
+
+
+
+    console.log('displayValueOne: ' + displayValueOne)
+    console.log('displayValueTwo: ' + displayValueTwo)
+    console.log('displayValue: ' + displayValue);
+
+    
+
+    operate(displayValueOne, displayValueTwo, plus)
+
+
+
+}
+
+
 
 function operate(num1, num2, operator) {
     if (operator === '+') {
+        display.innerHTML = add(num1, num2);
         return add(num1, num2);
+
     } else if (operator === '-') {
         return subtract(num1, num2);
     } else if (operator === '*') {
@@ -55,35 +112,44 @@ function populateDisplay(num) {
     displayValue += num;
     //displayObj.displayValue += num;
 
-    display.innerHTML = displayValue;
+    displaySum.innerHTML = displayValue;
 
     //display.innerHTML = displayObj.displayValue;
    
     console.log(num);
 
-    console.log(displayObj.displayValue);
+    console.log(displayValue);
+
+    //push display value to num1
+    //on operator (-*+etc) clear display value
+    //push second display value input to num2
+    //equals button should run operate
 
 }
 
-// function clearDisplay() {
-//     let displayObj.displayValue = "",
+ function clearDisplay() {
 
-// }
-
+ }
 
 
-// let displayObj = {
-//     displayValue: "",
-// };
+
+/* does this need to be addeventlistener instead of onclick?
+can i put click order on the addeventlistener function? */
+
+
+
+
+
+
+//  let displayObj = {
+//      displayValue: "",
+//  };
 
 //displayObj.myStr = "";
 
 //myFunc(container);
 
-// myFunc could have modified container.myStr and the new value would be here
-//console.log(container.myStr)
 
 
 
-// connect the number buttons to a function
-// this could mean appending them to a string? and this string being displayed as they are clicked?
+
