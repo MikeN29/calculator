@@ -127,9 +127,12 @@ function populateDisplay(num) {
 }
 
  function clearDisplay() {
-    let displayValue = undefined;
-    display.innerHTML = null;
-    displaySum.innerHTML = null;
+    let displayValue = '';
+    display.innerHTML = '';
+    displaySum.innerHTML = '';
+
+    console.log(displayValue)
+
 
 
  }
