@@ -34,6 +34,11 @@ function makeSum() {
     let subtractSign = '-';
     let multiplySign = '*';
     let divideSign = '/';
+
+    /* poss loop which loops through the string (or array if converted to an array - keeping numbers more than 1 digit together)
+    and looks to match +-/*. Once found check the order /*+- and calculated in that order */
+
+    
     
 
     if (displayObj.displayValue.includes(plusSign)) {
@@ -61,11 +66,6 @@ function makeSum() {
     console.log('displayValue: ' + displayObj.displayValue); 
 
 }
-
-/*
-make a function to split numbers on the string from start to either side of + sign
- */ 
-
 
 
 
