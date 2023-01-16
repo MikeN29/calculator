@@ -1,27 +1,32 @@
 let displayObj = {
     displayValue: "",
+    plusResult: "",
+    subtractResult: "",
+    multiplyResult: "",
+    divideResult: "",
+
     };
   
 
 
 function add(a, b) {
     displayObj.displayValue += '+';
-    return parseInt(a) + parseInt(b);
+    //return parseInt(a) + parseInt(b);
 };
 
 function subtract(a, b) {
     displayObj.displayValue += '-';
-    return parseInt(a) - parseInt(b);
+    //return parseInt(a) - parseInt(b);
 }
 
 function multiply(a, b) {
     displayObj.displayValue += '*';
-    return parseInt(a) * parseInt(b);
+    //return parseInt(a) * parseInt(b);
 }
 
 function divide(a, b) {
     displayObj.displayValue += '/';
-    return parseInt(a) / parseInt(b);
+    //return parseInt(a) / parseInt(b);
 }
 
 function makeSum() {
@@ -35,6 +40,8 @@ function makeSum() {
         let displayValueOne = displayObj.displayValue.substring(0, displayObj.displayValue.indexOf('+'));
         let displayValueTwo = displayObj.displayValue.substring(displayObj.displayValue.indexOf('+') + 1); 
         operate(displayValueOne, displayValueTwo, plusSign)
+        console.log('displayValueOne: ' + displayValueOne)
+        console.log('displayValueTwo: ' + displayValueTwo)
     } else if (displayObj.displayValue.includes(subtractSign))  {
         let displayValueOne = displayObj.displayValue.substring(0, displayObj.displayValue.indexOf('-')); 
         let displayValueTwo = displayObj.displayValue.substring(displayObj.displayValue.indexOf('-') + 1); 
@@ -49,27 +56,41 @@ function makeSum() {
         operate(displayValueOne, displayValueTwo, divideSign);
     }
   
-    //console.log('displayValueOne: ' + displayValueOne)
-    //console.log('displayValueTwo: ' + displayValueTwo)
-    console.log(displayObj.displayValue); 
+    // console.log('displayValueOne: ' + displayValueOne)
+    // console.log('displayValueTwo: ' + displayValueTwo)
+    console.log('displayValue: ' + displayObj.displayValue); 
 
 }
+
+/*
+make a function to split numbers on the string from start to either side of + sign
+ */ 
+
+
 
 
 
 function operate(num1, num2, operator) {
-    if (operator === '+') {
-        display.innerHTML = add(num1, num2);
-        return add(num1, num2);
+       if (operator === '+') {
+        displayObj.plusResult = parseInt(num1) + parseInt(num2);
+        display.innerHTML = displayObj.plusResult;
+        displayObj.displayValue = displayObj.plusResult;
+        //return add(num1, num2);
     } else if (operator === '-') {
-        display.innerHTML = subtract(num1, num2);
-        return subtract(num1, num2);
+        displayObj.subtractResult = display.innerHTML = parseInt(num1) - parseInt(num2);
+        display.innerHTML = displayObj.subtractResult
+        displayObj.displayValue = displayObj.subtractResult;
+        //return subtract(num1, num2);
     } else if (operator === '*') {
-        display.innerHTML = multiply(num1, num2);
-        return multiply(num1, num2);
+        displayObj.multiplyResult = parseInt(num1) * parseInt(num2);
+        display.innerHTML = displayObj.multiplyResult;
+        displayObj.displayValue = displayObj.multiplyResult;
+        //return multiply(num1, num2);
     } else if (operator === '/') {
-        display.innerHTML = divide(num1, num2);
-        return divide(num1, num2);
+        displayObj.divideResult = parseInt(num1) / parseInt(num2);
+        display.innerHTML = displayObj.divideResult;
+        displayObj.displayValue = displayObj.divideResult;
+        //return divide(num1, num2);
     }
     };
     
@@ -85,6 +106,10 @@ function populateDisplay(num) {
 
  function clearDisplay() {
     displayObj.displayValue = "";
+    displayObj.plusResult = "";
+    displayObj.subtractResult = "";
+    displayObj.multiplyResult = "";
+    
     display.innerHTML = '';
     displaySum.innerHTML = '';
 
