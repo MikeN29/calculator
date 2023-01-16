@@ -34,7 +34,6 @@ function makeSum() {
     if (displayObj.displayValue.includes(plusSign)) {
         let displayValueOne = displayObj.displayValue.substring(0, displayObj.displayValue.indexOf('+'));
         let displayValueTwo = displayObj.displayValue.substring(displayObj.displayValue.indexOf('+') + 1); 
-        // let displayValue = null;
         operate(displayValueOne, displayValueTwo, plusSign)
     } else if (displayObj.displayValue.includes(subtractSign))  {
         let displayValueOne = displayObj.displayValue.substring(0, displayObj.displayValue.indexOf('-')); 
@@ -74,7 +73,7 @@ function operate(num1, num2, operator) {
     }
     };
     
-// let displayValue = '';
+
 
 
 function populateDisplay(num) {
