@@ -1,9 +1,5 @@
 let displayObj = {
     displayValue: "",
-    plusResult: "",
-    subtractResult: "",
-    multiplyResult: "",
-    divideResult: "",
 
     };
   
@@ -35,12 +31,36 @@ function makeSum() {
     let multiplySign = '*';
     let divideSign = '/';
 
-    /* poss loop which loops through the string (or array if converted to an array - keeping numbers more than 1 digit together)
-    and looks to match +-/*. Once found check the order /*+- and calculated in that order */
+    /*
+    let str = displayObj.displayValue;
+    let calculation = str.match(/\d+|[^0-9]/g);
+    let result;
 
-    
-    
+    for (var a = 0; a < calculation.length; a++) {
+        if (a == 0) {
+            result = parseInt(calculation[a]);
+            } else {
+        if (!isNaN(calculation[a])) {
+            switch (calculation[a - 1]) {
+            case "-":
+                result -= parseInt(calculation[a]);
+                break;
+            case "+":
+                result += parseInt(calculation[a]);
+                break;
+            case "*":
+                result *= parseInt(calculation[a]);
+                break;
+            case "/":
+                result /= parseInt(calculation[a]);
+                 break;
+      }
+    }
+  }
+}
 
+        display.innerHTML = result;*/
+    
     if (displayObj.displayValue.includes(plusSign)) {
         let displayValueOne = displayObj.displayValue.substring(0, displayObj.displayValue.indexOf('+'));
         let displayValueTwo = displayObj.displayValue.substring(displayObj.displayValue.indexOf('+') + 1); 
@@ -63,23 +83,20 @@ function makeSum() {
   
     // console.log('displayValueOne: ' + displayValueOne)
     // console.log('displayValueTwo: ' + displayValueTwo)
-    console.log('displayValue: ' + displayObj.displayValue); 
-
+    //console.log('displayValue: ' + displayObj.displayValue); 
 }
-
-
 
 
 function operate(num1, num2, operator) {
        if (operator === '+') {
-        displayObj.plusResult = parseInt(num1) + parseInt(num2);
-        display.innerHTML = displayObj.plusResult;
-        displayObj.displayValue = displayObj.plusResult;
+        displayObj.runningTotal = parseInt(num1) + parseInt(num2);
+        display.innerHTML = displayObj.runningTotal;
+        displayObj.displayValue = displayObj.runningTotal;
         //return add(num1, num2);
     } else if (operator === '-') {
-        displayObj.subtractResult = display.innerHTML = parseInt(num1) - parseInt(num2);
-        display.innerHTML = displayObj.subtractResult
-        displayObj.displayValue = displayObj.subtractResult;
+        displayObj.runningTotal = display.innerHTML = parseInt(num1) - parseInt(num2);
+        display.innerHTML = displayObj.runningTotal
+        displayObj.displayValue = displayObj.runningTotal;
         //return subtract(num1, num2);
     } else if (operator === '*') {
         displayObj.multiplyResult = parseInt(num1) * parseInt(num2);
@@ -93,31 +110,18 @@ function operate(num1, num2, operator) {
         //return divide(num1, num2);
     }
     };
-    
-
-
 
 function populateDisplay(num) {
     displayObj.displayValue += num;
     displaySum.innerHTML = displayObj.displayValue;
 }
 
-
-
  function clearDisplay() {
     displayObj.displayValue = "";
-    displayObj.plusResult = "";
-    displayObj.subtractResult = "";
-    displayObj.multiplyResult = "";
     
     display.innerHTML = '';
     displaySum.innerHTML = '';
 
 
  }
-
-
- console.log(displayObj.displayValue)
-
-
 
