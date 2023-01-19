@@ -89,25 +89,21 @@ function makeSum() {
 
 function operate(num1, num2, operator) {
        if (operator === '+') {
-        displayObj.runningTotal = parseInt(num1) + parseInt(num2);
-        display.innerHTML = displayObj.runningTotal;
-        displayObj.displayValue = displayObj.runningTotal;
-        //return add(num1, num2);
+        displayObj.addResult = parseInt(num1) + parseInt(num2);
+        display.innerHTML = displayObj.addResult.toFixed(3);
+        displayObj.displayValue = displayObj.addResult.toFixed(3);
     } else if (operator === '-') {
-        displayObj.runningTotal = display.innerHTML = parseInt(num1) - parseInt(num2);
-        display.innerHTML = displayObj.runningTotal
-        displayObj.displayValue = displayObj.runningTotal;
-        //return subtract(num1, num2);
+        displayObj.subtractResult = display.innerHTML = parseInt(num1) - parseInt(num2);
+        display.innerHTML = displayObj.subtractResult.toFixed(3);
+        displayObj.displayValue = displayObj.subtractResult.toFixed(3);;
     } else if (operator === '*') {
         displayObj.multiplyResult = parseInt(num1) * parseInt(num2);
-        display.innerHTML = displayObj.multiplyResult;
-        displayObj.displayValue = displayObj.multiplyResult;
-        //return multiply(num1, num2);
+        display.innerHTML = displayObj.multiplyResult.toFixed(3);
+        displayObj.displayValue = displayObj.multiplyResult.toFixed(3);;
     } else if (operator === '/') {
         displayObj.divideResult = parseInt(num1) / parseInt(num2);
-        display.innerHTML = displayObj.divideResult;
-        displayObj.displayValue = displayObj.divideResult;
-        //return divide(num1, num2);
+        display.innerHTML = displayObj.divideResult.toFixed(3);
+        displayObj.displayValue = displayObj.divideResult.toFixed(3);
     }
     };
 
@@ -118,7 +114,6 @@ function populateDisplay(num) {
 
  function clearDisplay() {
     displayObj.displayValue = "";
-    
     display.innerHTML = '';
     displaySum.innerHTML = '';
 
