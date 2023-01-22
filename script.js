@@ -7,22 +7,18 @@ let displayObj = {
 
 function add(a, b) {
     displayObj.displayValue += '+';
-    //return parseInt(a) + parseInt(b);
 };
 
 function subtract(a, b) {
     displayObj.displayValue += '-';
-    //return parseInt(a) - parseInt(b);
 }
 
 function multiply(a, b) {
     displayObj.displayValue += '*';
-    //return parseInt(a) * parseInt(b);
 }
 
 function divide(a, b) {
     displayObj.displayValue += '/';
-    //return parseInt(a) / parseInt(b);
 }
 
 function makeSum() {
@@ -32,7 +28,10 @@ function makeSum() {
     let divideSign = '/';
 
     /*
+
+    
     let str = displayObj.displayValue;
+    //let decimalStr = parseInt(str).toFixed(2)
     let calculation = str.match(/\d+|[^0-9]/g);
     let result;
 
@@ -60,6 +59,8 @@ function makeSum() {
 }
 
         display.innerHTML = result;*/
+
+       
     
     if (displayObj.displayValue.includes(plusSign)) {
         let displayValueOne = displayObj.displayValue.substring(0, displayObj.displayValue.indexOf('+'));
@@ -84,24 +85,26 @@ function makeSum() {
     // console.log('displayValueOne: ' + displayValueOne)
     // console.log('displayValueTwo: ' + displayValueTwo)
     //console.log('displayValue: ' + displayObj.displayValue); 
+
+    
 }
 
 
 function operate(num1, num2, operator) {
        if (operator === '+') {
-        displayObj.addResult = parseInt(num1) + parseInt(num2);
+        displayObj.addResult = parseFloat(num1) + parseFloat(num2);
         display.innerHTML = displayObj.addResult.toFixed(3);
         displayObj.displayValue = displayObj.addResult.toFixed(3);
     } else if (operator === '-') {
-        displayObj.subtractResult = display.innerHTML = parseInt(num1) - parseInt(num2);
+        displayObj.subtractResult = display.innerHTML = parseFloat(num1) - parseFloat(num2);
         display.innerHTML = displayObj.subtractResult.toFixed(3);
         displayObj.displayValue = displayObj.subtractResult.toFixed(3);;
     } else if (operator === '*') {
-        displayObj.multiplyResult = parseInt(num1) * parseInt(num2);
+        displayObj.multiplyResult = parseFloat(num1) * parseFloat(num2);
         display.innerHTML = displayObj.multiplyResult.toFixed(3);
         displayObj.displayValue = displayObj.multiplyResult.toFixed(3);;
     } else if (operator === '/') {
-        displayObj.divideResult = parseInt(num1) / parseInt(num2);
+        displayObj.divideResult = parseFloat(num1) / parseFloat(num2);
         display.innerHTML = displayObj.divideResult.toFixed(3);
         displayObj.displayValue = displayObj.divideResult.toFixed(3);
     }
